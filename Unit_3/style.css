@@ -1,0 +1,141 @@
+body{
+	font-family: 'Kanit', cursive, sans-serif;
+	font-size: 150%;
+	margin:-33px;
+	text-align: center;
+	background-image: url(khunkaibnk.jpg);
+	background-position: 0% 0%;
+	background-size: 40%;
+	/* background-size: cover; */
+	min-height: 100vh; /*ทำให้เวลาทำพื้นหลังแล้วมันสูงเต็มหน้าจอ*/
+	animation: bg 40s infinite linear;
+	-webkit-animation: bg 40s infinite linear;
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+@keyframes bg{
+	from{background-position: 0% 0%}
+	to{background-position: -100% -88%}
+}
+
+.title{
+	color: #fff;
+	animation: shadow .25s infinite alternate,
+	title 1s infinite steps(2);
+}
+
+.pad-title{
+	padding-top: 10vh;
+}
+
+@keyframes shadow{
+	from{
+		text-shadow:
+		-1px -1px 0px #f3bd4a,
+		1px -1px 0px #f3bd4a,
+		-1px 1px 0px #f3bd4a,
+		1px 1px 0px #f3bd4a,
+		1px 2px 0px #f3bd4a,
+		2px 3px 0px #f3bd4a,
+		3px 4px 0px #f3bd4a,
+		4px 5px 0px #f3bd4a,
+		5px 6px 0px #f3bd4a,
+		6px 7px 0px #f3bd4a
+		;
+	}
+	to{
+		text-shadow:
+		-1px -1px 0px #ffe9b9,
+		1px -1px 0px #ffe9b9,
+		-1px 1px 0px #ffe9b9,
+		1px 1px 0px #ffe9b9,
+		1px 2px 0px #ffe9b9,
+		2px 3px 0px #ffe9b9,
+		3px 4px 0px #ffe9b9,
+		4px 5px 0px #ffe9b9
+		;
+	}
+}
+
+@keyframes title{
+	from{transform: rotate(-5deg);}
+	to{transform: rotate(10deg);}
+}
+
+#cookie{
+	position: relative;
+	display: inline-block;
+	margin-top: 50px;
+}
+@keyframes cookie-swing{
+	from{transform: rotate(10deg);}
+	to{transform: rotate(-10deg);}
+}
+@keyframes cookie-hide{
+	from{transform: rotate(10deg) scale(1);}
+	to{transform: rotate(-3600deg) scale(0);}
+}
+
+@keyframes cookie-show2{
+	from{transform:scale(0);}
+	to{transform:scale(1);}
+}
+.cookie-1{
+	animation: cookie-swing .3s infinite alternate ;
+	-webkit-animation: cookie-swing .3s infinite alternate;
+	transition: all .3s;
+	cursor: pointer;
+}
+.cookie-2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: scale(0);
+}
+
+.cookie-hide{
+	animation: cookie-hide 1s 1;
+	transform: scale(0);
+}
+.cookie-show{
+	animation: cookie-hide 2s 1 reverse;
+	transform: scale(1.25);
+}
+
+.cookie-show2{
+	animation: cookie-show2 1s 1;
+	transform: scale(1);
+}
+#fortune {
+    position: absolute;
+    top: 106px;
+    opacity: 0;
+    left: 187px;
+    width: 273px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    text-shadow: 0px 0px 2px #af50208f;
+    color: #a33e1d;
+    transition: all 1s;
+}
+
+footer{
+	width:100%;
+	height:6%;
+	background-color: rgb(48, 48, 48);
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	color:grey;
+	-webkit-font-feature-settings: "swsh";
+	font-size: 2.5vh;
+	justify-content:left;
+	margin :0 0 0 30px;
+	padding :10px 0 0 20px;
+	font-family: 'Kanit', Courier, monospace !important;
+	float: left;
+
+}
