@@ -75,6 +75,7 @@
 			document.getElementById('web_demo').innerHTML = 'http://'+user[nowIndex].website;
 			document.getElementById('web_demo').href = 'http://'+user[nowIndex].website;
 			document.getElementById('email_demo').innerHTML = user[nowIndex].email;
+			document.getElementById('email_demo').href = 'mailto:'+user[nowIndex].email;
 		}
 
 		function clickRight(){
@@ -109,6 +110,7 @@
 	<style>
 		:root{
 			--bakblack:#0c0c0c;
+			--bakblack2:#1d1d1d;
 		}
 		.rounding{
 			width: 40px;
