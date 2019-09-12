@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom 5 - Register</title>
+	<meta charset=utf-8>
+	<meta name=description content="">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Chonburi|Prompt&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+	<style type="text/css">
+		th{
+			background-color: #eee;
+			padding:.2em 1em;
+		}
+
+		tr{
+			text-align: center;
+		}
+		input,button{
+			padding:.2em .5em;
+			font-size: 1em;
+		}
+		h2,h1{
+			font-family: 'Chonburi', cursive;
+		}
+		.container{
+			display: block;
+			justify-content: center;
+			width: 100%;
+			height: auto;
+		}
+
+		.heading{
+			border-radius: 10px;
+			text-align: center;
+			margin: 25px;
+			padding: 20px;
+			font-family: 'Prompt', sans-serif;
+		}
+		.placehoding{
+
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			border-radius: 10px;
+			text-align: center;
+			margin: 30px;
+			padding: 20px;
+			font-family: 'Prompt', sans-serif;
+
+		}
+		.table1{
+			display: block;
+			position: relative;
+			width: 100%;
+			font-family: 'Prompt', sans-serif;
+		}
+		.info_1,.info_2,.info_0{
+			margin:10.5px;
+		}
+		.stroking{
+			-webkit-text-stroke-width: 1px;
+			color: rgba(0, 0, 0, 0);
+   			-webkit-text-stroke-color: black;
+		}
+	</style>
+</head>
+<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#">331 <b class="font-weight-bold badge badge-secondary text-wrap">STUDIO</b></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+			  </nav>
+	<!-- ให้นักศึกษาทำแบบฟอร์ม รหัสนักศึกษา ชื่อ นามสกุล เมื่อกรอกแล้วจะไปลงตารางลงทะเบียนโดยต้องกรอกให้ครบทุกช่อง 
+	โดยจะมีหมายเลขลำดับไล่ไปเรื่อยๆ และให้ทำการเคลียร์ค่าของช่องอินพุทเมื่อลงทะเบียนไปแล้ว
+	--><div class="container">
+			<h1 class="display-4 stroking" style="position: absolute; margin:30px 0 0 350px; display: block">ลงทะเบียนร่วมงาน</h1>
+		<form onsubmit="return register()">	
+			<div class="col-md-12 heading">
+				<h1 class="display-4">ลงทะเบียนร่วมงาน</h1>
+			</div>
+			<div class="col-md-12 placehoding">
+				<input type="text" class="info_0 form-control" name="id1" placeholder="รหัสนักศึกษา"  required>
+				<input type="text" class="info_1 form-control" name="nickname" placeholder="ชื่อ"  required>
+				<input type="text" class="info_2 form-control" name="lastname" placeholder="นามสกุล"  required>
+				<button class="btn btn-warning">ลงทะเบียน</button>
+			</div>
+		</form>
+		<br><hr><br>
+		<div class="col-md-12" style="margin: 0 0 20px 0px;">
+				<h2>รายชื่อผู้ลงทะเบียน</h2>
+			</div>
+		<div class="table1">
+		<table>
+			<thead>
+				<th>ลำดับที่</th>
+				<th>รหัสนักศึกษา</th>
+				<th>ชื่อ</th>
+				<th>นามสกุล</th>
+			</thead>
+			<tbody id="registerList">
+			</tbody>
+		</table>
+		<br><hr><br>
+		</div>
+	</div>
+
+
+
+	<script>
+		let i = 1;
+		function register(){
+			people = document.createElement("tr");
+			people.innerHTML = `
+			<td>${i}</td>
+			<td>${document.querySelector('.info_0').value}</td>
+			<td>${document.querySelector('.info_1').value}</td>
+            <td>${document.querySelector('.info_2').value}</td>
+			`;
+			registerList.appendChild(people);
+			document.querySelector('.info_0').value = "";
+			document.querySelector('.info_1').value = "";
+            document.querySelector('.info_2').value = "";
+            console.log(i);
+            i++;
+		return false;
+		}
+	</script> 
+</body>
+</html>
