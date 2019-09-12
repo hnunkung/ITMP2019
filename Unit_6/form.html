@@ -74,7 +74,7 @@
 	โดยจะมีหมายเลขลำดับไล่ไปเรื่อยๆ และให้ทำการเคลียร์ค่าของช่องอินพุทเมื่อลงทะเบียนไปแล้ว
 	--><div class="container">
 			<h1 class="display-4 stroking" style="position: absolute; margin:30px 0 0 350px; display: block">ลงทะเบียนร่วมงาน</h1>
-		<form onsubmit="return register()">	
+		<form id="registration" onsubmit="return register()">	
 			<div class="col-md-12 heading">
 				<h1 class="display-4">ลงทะเบียนร่วมงาน</h1>
 			</div>
@@ -122,7 +122,31 @@
             document.querySelector('.info_2').value = "";
             console.log(i);
             i++;
-		return false;
+			return false;
+
+			// let id = document.forms["registration"]["id1"].value
+			// let firstname = document.forms["registration"]["fname"].value
+			// let lastname = document.forms["registration"]["lname"].value
+			
+			// if (id.length != 13) {
+			// 	alert("กรุณาใส่เลขบัตรประจำตัวประชาชนให้ครบ 13 หลัก")
+			// 	console.log("กรุณาใส่เลขบัตรประจำตัวประชาชนให้ครบ 13 หลัก")
+			// 	return "";
+			// }
+
+			// if (firstname.length < 2 || firstname.length > 20) {
+			// 	alert("กรุณาใส่ชื่อ 2-20 ตัวอักษร")
+			// 	console.log("กรุณาใส่ชื่อ 2-20 ตัวอักษร")
+			// 	return "";
+			// }
+
+			// if (lastname.length < 2 || lastname.length > 20) {
+			// 	alert("กรุณาใส่นามสกุล 2-20 ตัวอักษร")
+			// 	console.log("กรุณาใส่นามสกุล 2-20 ตัวอักษร")
+			// 	return "";
+			// }
+			// document.getElementById("registration").submit();
+			// return false;
 		}
 	</script> 
 </body>
