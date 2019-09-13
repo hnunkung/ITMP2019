@@ -5,6 +5,16 @@
 </head>
 <body>
 	Welcome to ITMP2019
+	<script>
+		const testFolder = './ITMP2019/';
+		const fs = require('fs');
+
+		fs.readdir(testFolder, (err, files) => {
+  		files.forEach(file => {
+    	console.log(file);
+  });
+});
+	</script>
 </body>
 <style>
 	
