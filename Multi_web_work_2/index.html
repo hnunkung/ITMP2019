@@ -20,7 +20,7 @@
 
         canvas {
             margin:0px;
-		}
+        }
 
         #control{
             background: rgb(27, 27, 27);
@@ -29,7 +29,7 @@
             padding: 15px 0 15px 0;
             box-sizing: border-box;
             display: inline-flex;
-	    }
+        }
 
 
         .score-warp{
@@ -70,11 +70,18 @@
             z-index: 999;
             opacity:0;
         }
-        
+
+        .hide{
+            opacity: 0;
+        }
+    
+        .show{
+            opacity: 1;
+        }
 </style>
 <body>
     <div class="container">
-        <div id="textplace" class="justify-content-center d-flex display-4 position-absolute w-75 h-100 " style="align-items: center; font-family: 'Kanit'"><img src="https://img.icons8.com/cute-clipart/64/000000/rocket.png">
+        <div id="textplace" class="justify-content-center d-flex display-4 position-absolute  h-100 " style="align-items: center; font-family: 'Kanit'; width:65%; z-index:900;"><img src="https://img.icons8.com/cute-clipart/64/000000/rocket.png">
             <p class="placehol"><b class="badge">PRESS</b> <div class=""><button class="btn btn-primary" style="
                 width: 150px;
                 height: 80px;
@@ -95,6 +102,10 @@
             <button id="btnstart" style="opacity: 0" class="" onclick="gameStart()"><b>S T A R T</b></button>
             <button id="btnreplay" style="opacity: 0" class="" onclick="Replay()"><b>R E P L A Y</b></button>
             
+    </div>
+    <div id="astronj" class="justify-content-center d-flex hide" style="align-items: center; -webkit-text-size-adjust: auto; width: 90%; height: 100%; position: absolute;
+     z-index: 888;" >
+        <img src="char.png">
     </div>
     <canvas id="canvas"></canvas>
     
@@ -142,12 +153,15 @@
         }
 
 
-        
+        //load image
         var c = document.getElementById("canvas");
         var context = c.getContext("2d");
         var image = new Image();
         image.src = 'char.png';
-        context.drawImage(image,600,300);
+        var ximg = (c.width  - this.width ) * 0.5,   // this = image loaded
+        yimg = (c.height - this.height) * 0.5;
+
+        context.drawImage(image,ximg,yimg);
         
         context.fillStyle=player.color;
         context.beginPath();
@@ -347,6 +361,8 @@
         btnreplay.classList.add('button-warp');
         btnstart.style.opacity = 1;
         btnreplay.style.opacity = 1;
+        astronj.classList.remove('hide');
+        astronj.classList.add('show');
 
     }
 
