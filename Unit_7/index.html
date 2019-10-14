@@ -1,69 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<style>
-	.yoyo{
-		width: 100px;
-		height: 100px;
-		position: fixed;
-		right: 1em;
-		bottom: 1em;
-		background: blue;
-	}
-	@keyframes blink{
-		from{opacity: 1}
-		to{opacity: 0.3}
-	}
-	.blink{
-		animation: blink .2s infinite;
-	}
-	#tooPla{
-		height: 600px;
-		background: navy;
-		position: relative;
-		overflow: hidden;
-	}
-	.fish{
-		position: absolute;
-		width: 100px;
-		transition: all .2s
-	}
-	.f1{
-		top: 450px;
-		left: 80px;
-	}
-	.f2{
-		top: 700px;
-		left: 480px;
-	}
-	.f3{
-		top: 540px;
-		left: 60px;
-	}
-	.f4{
-		top: 580px;
-		left: 200px;
-	}
-	.f5{
-		top: 400px;
-		left: 400px;
-	}
-</style>
+		.yoyo {
+			width: 100px;
+			height: 100px;
+			position: fixed;
+			right: 1em;
+			bottom: 1em;
+			background: blue;
+		}
+
+		@keyframes blink {
+			from {
+				opacity: 1
+			}
+
+			to {
+				opacity: 0.3
+			}
+		}
+
+		.blink {
+			animation: blink .2s infinite;
+		}
+
+		#tooPla {
+			height: 600px;
+			background: navy;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.fish {
+			position: absolute;
+			width: 100px;
+			transition: all .2s
+		}
+
+		.f1 {
+			top: 450px;
+			left: 80px;
+		}
+
+		.f2 {
+			top: 700px;
+			left: 480px;
+		}
+
+		.f3 {
+			top: 540px;
+			left: 60px;
+		}
+
+		.f4 {
+			top: 580px;
+			left: 200px;
+		}
+
+		.f5 {
+			top: 400px;
+			left: 400px;
+		}
+	</style>
 	<title>Hello Ocean World</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="https://jabont.com/jayss/jayss.css">
 </head>
+
 <body>
 
 	<div id="d1" style="height: 400px;width: 100%;background: pink"></div>
 	<div id="d2" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d3" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d4" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d5" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d6" style="height: 400px;width: 100%;background: orchid"></div>
-	<div id="d7" style="height: 400px;width: 100%;background: pink"></div>
-	<div id="d8" style="height: 400px;width: 100%;background: orchid"></div>
-		<div id="tooPla">
+	<div id="tooPla">
 		<img src="fish1.png" class="fish f1" id="f1">
 		<img src="fish1.png" class="fish f2" id="f2">
 		<img src="fish1.png" class="fish f3" id="f3">
@@ -83,27 +93,27 @@
 
 
 	<script type="text/javascript">
-		function rotateNongYoyo(){
+		function rotateNongYoyo() {
 			let r = window.pageYOffset;
 			yoyo.style.transform = `rotate(${r}deg)`;
 		}
 		window.addEventListener("scroll", rotateNongYoyo);
-		function blinkThat(){
+
+		function blinkThat() {
 			let ey = d3.offsetTop;
-			let ebottom = ey+d3.offsetHeight; 
+			let ebottom = ey + d3.offsetHeight;
 			let nowTop = window.pageYOffset;
-			let nowBottom = nowTop+window.innerHeight;
-			if (nowBottom>ey+300 && nowTop<ebottom-100) {
+			let nowBottom = nowTop + window.innerHeight;
+			if (nowBottom > ey + 300 && nowTop < ebottom - 100) {
 				d3.classList.add('blink');
-			}
-			else{
+			} else {
 				d3.classList.remove('blink');
 			}
 		}
 		window.addEventListener("scroll", blinkThat);
 
-		function plaToo(){
-			let y = window.pageYOffset-tooPla.offsetTop+tooPla.offsetHeight;
+		function plaToo() {
+			let y = window.pageYOffset - tooPla.offsetTop + tooPla.offsetHeight;
 			console.log(y);
 			f1.style.marginTop = `-${y}px`;
 			f2.style.marginTop = `-${y*3}px`;
@@ -114,4 +124,5 @@
 		window.addEventListener("scroll", plaToo);
 	</script>
 </body>
+
 </html>
