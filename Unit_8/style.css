@@ -1,0 +1,143 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    transition: all 2s;
+    box-sizing: border-box;
+}
+
+.contain-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    transition: all 2s;
+}
+
+
+div{
+    height: 200px;
+    background:  linear-gradient(#22221f, #595b6900);
+}
+
+body{
+    margin: 0;
+}
+p{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+#mybox{
+    width: 300px;
+    height: 300px;
+    /* background:  linear-gradient(#e66465, #9198e5); */
+    background-image: url('images/01.jpg');
+    background-size : cover;
+    position: relative;
+}
+/* #mybox2{
+    width: 300px;
+    height: 300px;
+    background-image: url('images/02.jpg');
+    background-size : cover;
+    position: relative;
+}
+
+#mybox3{
+    width: 300px;
+    height: 300px;
+    background-image: url('images/03.jpg');
+    background-size : cover;
+    position: relative;
+}
+
+
+#mybox4{
+    width: 300px;
+    height: 300px;
+    background-image: url('images/04.jpg');
+    background-size : cover;
+    margin: 20px; 
+    position: relative;
+} */
+@media (max-width: 1024px) and (min-width: 767px){
+    .container{
+        display: flex;
+        position: relative;
+    }
+
+    #mybox{
+        width: 300px;
+        height: 300px;
+        /* background:  linear-gradient(#e66465, #9198e5); */
+        background-image: url('images/02.jpg');
+        background-size : cover;
+        position: relative;
+    }
+
+    div{
+        background:  linear-gradient(#575a00, #595b6900);
+    }
+    
+}
+
+@media (max-width: 768px){
+    .container{
+        display: flex;
+        position: relative;
+        transition: all 2s;
+        padding: 40%;
+    }
+
+    #mybox{
+        width: 300px;
+        height: 300px;
+        /* background:  linear-gradient(#e66465, #9198e5); */
+        background-image: url('images/03.jpg');
+        background-size : cover;
+        position: relative;
+        margin: 10% auto;
+
+    }
+
+    div{
+        background:  linear-gradient(#1b1b07, #595b6900);
+    }
+}
+
+@media (max-width: 414px){
+    .container{
+        display: flex;
+        position: relative;
+        transition: all 2s;
+        padding: 50%;
+    }
+
+    #mybox{
+        width: 300px;
+        height: 300px;
+        /* background:  linear-gradient(#e66465, #9198e5); */
+        background-image: url('images/04.jpg');
+        background-size : cover;
+        position: relative;
+        margin: 10% auto;
+
+    }
+
+    div{
+        background:  linear-gradient(#0b1e25, #595b6900);
+    }
+}
+
+.w180{ width: 180px}
+.w320{ width: 320px}
+.w440{ width: 440px}
+.w768{ width: 768px}
+.mg-20{margin: 20px}
+.pd-20{padding: 20px}
+.text-1{font-family: 'Kanit'; font-size: 2em;}
